@@ -1,0 +1,118 @@
+
+C:\Users\Admin>ipconfig
+
+Configuração de IP do Windows
+
+
+Adaptador Ethernet Ethernet 2:
+
+   Estado da mídia. . . . . . . . . . . . . .  : mídia desconectada
+   Sufixo DNS específico de conexão. . . . . . :
+
+Adaptador de Rede sem Fio Conexão Local* 9:
+
+   Estado da mídia. . . . . . . . . . . . . .  : mídia desconectada
+   Sufixo DNS específico de conexão. . . . . . :
+
+Adaptador de Rede sem Fio Conexão Local* 10:
+
+   Estado da mídia. . . . . . . . . . . . . .  : mídia desconectada
+   Sufixo DNS específico de conexão. . . . . . :
+
+Adaptador de Rede sem Fio Wi-Fi:
+
+   Sufixo DNS específico de conexão. . . . . . :
+   Endereço IPv6 . . . . . . . . . . : 2804:14c:6585:40eb:e85f:77cf:810c:3d40
+   Endereço IPv6 Temporário. . . . . . . . : 2804:14c:6585:40eb:51f2:ba05:4d24:fc9
+   Endereço IPv6 de link local . . . . . . . . : fe80::e85f:77cf:810c:3d40%4
+   Endereço IPv4. . . . . . . .  . . . . . . . : 192.168.0.11
+   Máscara de Sub-rede . . . . . . . . . . . . : 255.255.255.0
+   Gateway Padrão. . . . . . . . . . . . . . . : fe80::920d:cbff:fef1:89b1%4
+                                                 192.168.0.1
+
+C:\Users\Admin>ping 192.168.0.1
+
+Disparando 192.168.0.1 com 32 bytes de dados:
+Esgotado o tempo limite do pedido.
+Esgotado o tempo limite do pedido.
+Esgotado o tempo limite do pedido.
+Esgotado o tempo limite do pedido.
+
+Estatísticas do Ping para 192.168.0.1:
+    Pacotes: Enviados = 4, Recebidos = 0, Perdidos = 4 (100% de
+             perda),
+
+C:\Users\Admin>ping 192.168.0.1
+
+Disparando 192.168.0.1 com 32 bytes de dados:
+Resposta de 192.168.0.11: Host de destino inacessível.
+Resposta de 192.168.0.11: Host de destino inacessível.
+Esgotado o tempo limite do pedido.
+Resposta de 192.168.0.11: Host de destino inacessível.
+
+Estatísticas do Ping para 192.168.0.1:
+    Pacotes: Enviados = 4, Recebidos = 3, Perdidos = 1 (25% de
+             perda),
+
+C:\Users\Admin>nslookup www.iesb.br
+Servidor:  UnKnown
+Address:  2804:14d:1:0:181:213:132:2
+
+Não é resposta autoritativa:
+Nome:    www.iesb.br
+Address:  54.174.194.96
+
+
+C:\Users\Admin>nslookup intranet.iesb.br
+Servidor:  UnKnown
+Address:  2804:14d:1:0:181:213:132:2
+
+Não é resposta autoritativa:
+Nome:    intranet.iesb.br
+Address:  186.251.61.197
+
+
+C:\Users\Admin>tracert 54.174.194.96
+
+Rastreando a rota para ec2-54-174-194-96.compute-1.amazonaws.com [54.174.194.96]
+com no máximo 30 saltos:
+
+  1     4 ms     2 ms     4 ms  192.168.0.1
+  2    20 ms     9 ms    13 ms  10.35.128.1
+  3   142 ms    17 ms    13 ms  bd060095.virtua.com.br [189.6.0.149]
+  4    13 ms    35 ms     *     189.52.88.49
+  5   691 ms   320 ms     *     200.244.67.157
+  6   578 ms   249 ms   142 ms  ebt-B16142-intl04.mianap.embratel.net.br [200.230.220.206]
+  7   154 ms   238 ms   151 ms  ebt-B101-intl03.mianap.embratel.net.br [200.230.252.201]
+  8   187 ms   141 ms   159 ms  72.21.221.208
+  9     *        *        *     Esgotado o tempo limite do pedido.
+ 10     *        *     ^C
+C:\Users\Admin>tracert www.iesb.br
+
+Rastreando a rota para www.iesb.br [54.174.194.96]
+com no máximo 30 saltos:
+
+  1     1 ms     1 ms     2 ms  192.168.0.1
+  2    14 ms    12 ms     9 ms  10.35.128.1
+  3   404 ms    13 ms    13 ms  bd060095.virtua.com.br [189.6.0.149]
+  4    12 ms    12 ms    12 ms  189.52.88.49
+  5    22 ms    10 ms    11 ms  200.244.67.157
+  6   189 ms   235 ms   147 ms  ebt-B16142-intl04.mianap.embratel.net.br [200.230.220.206]
+  7   151 ms   253 ms   159 ms  ebt-B101-intl03.mianap.embratel.net.br [200.230.252.201]
+  8   140 ms   158 ms   143 ms  72.21.221.208
+  9     *        *        *     Esgotado o tempo limite do pedido.
+ 10     *        *        *     Esgotado o tempo limite do pedido.
+ 11  ^C
+C:\Users\Admin>tracert intranet.iesb.br
+
+Rastreando a rota para intranet.iesb.br [186.251.61.197]
+com no máximo 30 saltos:
+
+  1    26 ms     1 ms     1 ms  192.168.0.1
+  2   177 ms   147 ms    27 ms  10.35.128.1
+  3   131 ms     *       14 ms  bd060095.virtua.com.br [189.6.0.149]
+  4    10 ms    23 ms    12 ms  as268716.brasilia.df.ix.br [200.192.110.19]
+  5   498 ms     *       13 ms  45.171.103.234
+  6     *        *        *     Esgotado o tempo limite do pedido.
+  7     *        *        *     Esgotado o tempo limite do pedido.
+  8  ^C
